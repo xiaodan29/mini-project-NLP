@@ -1,16 +1,48 @@
-# mini-project-V
+# mini-project-V (QUORA.COM ANALYSIS)
+![](PIC/R.png)
 
-The repo with instructions for Mini Project V
-
-Welcome to your final mini-project of this bootcamp. We hope you will enjoy it. 
-
-### Description
-
-We will combine the skills we developed in the previous modules to identify duplicate questions in a dataset provided by Quora. This dataset  was labeled by human experts which is an expensive process. The model you will build will need to automatically identify and label duplicate questions.
-
-We are going to need to build a classifier model to achieve this result..
+- Quora.com is a popular question-and-answer platform
+- Users can ask questions on a wide range of topics and get answers from others
+- Our objective is to build a classifier model that can identify duplicated questions on Quora using different techniques
 
 
-### Data
+### Workflow 
 
-The labeled dataset can be downloaded from [here](https://drive.google.com/file/d/19iWVGLBi7edqybybam56bt2Zy7vpf1Xc/view?usp=sharing).
+ #### EDA Phrase
+ - Duplicated questions distributions as showed:
+![](PIC/0.png)
+ - Drop missing values
+ - Balanced dataset
+ - Top_n words (for part 2) 
+ 
+ #### Cleaning Phrase
+ - Tokenization
+ - Stopwords cleaning
+ - Removing punctuation
+ - Normalizing
+ - Stemming
+ 
+ #### Feature Engineering with Modeling 
+  - Part 1 with only one feature ( BoW, TF-IDF, Word2Vec)
+    I've tried different training techniques with different feature engineered techniques, only post here with the best result models. 
+    1) BoW
+  ![](PIC/1.png)
+  ![](PIC/11.png)
+  
+    2) TF-IDF
+  ![](PIC/2.png)
+  ![](PIC/22.png)
+
+    3) Word2Vec
+  ![](PIC/3.png)
+  ![](PIC/33.png)
+
+ - Part 2 with two or more features and neural network training 
+   1) with top_n word feature and TF-IDF together
+   ![](PIC/4.png)
+   
+   2) with TF-IDF and Word2Vec together
+   ![](PIC/5.png)
+  
+   3) With the feedforward neural network model
+      Test accuracy: 0.6704999804496765
